@@ -18,8 +18,8 @@ Code for the machine learning methods and LFCNN in the paper: A layered sEMG-FMG
 
 # Function of file
 
-* `construct_model.py`
-  * Generate submodule of model (E.g., U-unit, MSE).
+* `a-layered-sensor-unit/main_experiment/model/ml/`
+  * train machine learning model (XGBoost, SVM, RandomForest, KNN).
 * `model.py`
   * Generate single-branch and two-branch model.
 

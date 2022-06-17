@@ -24,5 +24,5 @@ Code for the machine learning methods and LFCNN in the paper: A layered sEMG-FMG
   * Generate sEMG-FMG LFN model, sEMG LFN model and FMG LFN model.
 
 # Usage
-We've offered two models:  `SingleSalientModel` and `TwoSteamSalientModel` for single-branch method and two-branch method respectively.
-You need to use a tensor with shape: **[None, group_sequence_number , group_sequence_length * sleep_epoch_length, 1, 1]** for the single-branch method while duplicate tensors with the same shape for the two-branch method.
+We've offered three models:  `sEMG-FMG LayerFusionModel` , `sEMG LayerFusionModel` and `FMG LayerFusionModel` for dual modal (sEMG and FMG) and single modal (sEMG or FMG) respectively.
+You need to use a tensor with shape: **[Batch_size, channel, length]** for all the three models.

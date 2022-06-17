@@ -20,8 +20,8 @@ Code for the machine learning methods and LFCNN in the paper: A layered sEMG-FMG
 
 * `a-layered-sensor-unit/main_experiment/model/ml/`
   * train machine learning model (XGBoost, SVM, RandomForest, KNN).
-* `model.py`
-  * Generate single-branch and two-branch model.
+* `a-layered-sensor-unit/main_experiment/model/dl/model.py`
+  * Generate sEMG-FMG LFN model, sEMG LFN model and FMG LFN model.
 
 # Usage
 We've offered two models:  `SingleSalientModel` and `TwoSteamSalientModel` for single-branch method and two-branch method respectively.

@@ -86,8 +86,8 @@
 #
 # ======================= fmg data ====================
 #         best parameter combinations 
-#                  n_estimators=9,
-#                  max_depth=27,
+#                  n_estimators=12,
+#                  eta=0.318,
 #                  max_features=6,
 #                  acc = 0.4766  f1-score = 0.4668
 # =====================================================

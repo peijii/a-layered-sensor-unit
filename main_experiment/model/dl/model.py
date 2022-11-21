@@ -84,10 +84,10 @@ class LFCNN(nn.Module):
 
         for channelID in self.channelsID:
             for i in range(len(channelID)):
-                setattr(LFCNN, channelID[i], block(layers[i], layers[i+1], kernel_size=3))
+                setattr(self, channelID[i], block(layers[i], layers[i+1], kernel_size=3))
 
         for finallayerid in self.finallayerID:
-            setattr(LFCNN, finallayerid, nn.Conv1d(in_channels=sum(layers[1:]), out_channels=128, kernel_size=1))
+            setattr(self, finallayerid, nn.Conv1d(in_channels=sum(layers[1:]), out_channels=128, kernel_size=1))
 
     def _forward_imp(self, x: torch.Tensor) -> torch.Tensor:
         channelconcate = []
@@ -96,7 +96,7 @@ class LFCNN(nn.Module):
             res = torch.unsqueeze(res, 1)
             out = []
             for blockID in attr:
-                func = getattr(LFCNN, blockID)
+                func = getattr(self, blockID)
                 res, res2 = func(res)
                 out.append(res2)
             channelconcate.append(out)
@@ -104,7 +104,7 @@ class LFCNN(nn.Module):
         final_out = []
         for i in range(len(channelconcate)):
             channel_out = torch.cat(channelconcate[i], 1)
-            func = getattr(LFCNN, self.finallayerID[i])
+            func = getattr(self, self.finallayerID[i])
             channel_out = func(channel_out)
             final_out.append(channel_out)
 
